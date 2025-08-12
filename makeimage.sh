@@ -10,6 +10,10 @@ cat <<EOF >"$TMPCFG"
 EOF
 trap "rm -f '$TMPCFG'" EXIT
 
+git config --global pack.windowMemory "100m"
+git config --global pack.packSizeLimit "100m"
+git config --global core.bigFileThreshold "50m"
+
 docker buildx inspect ffbuilder &>/dev/null || docker buildx create \
     --bootstrap \
     --name ffbuilder \
