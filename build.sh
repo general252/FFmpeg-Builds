@@ -76,7 +76,7 @@ else
 fi
 cd -
 
-rm -rf ffbuild
+#rm -rf ffbuild
 
 if [[ -n "$GITHUB_ACTIONS" ]]; then
     echo "build_name=${BUILD_NAME}" >> "$GITHUB_OUTPUT"
